@@ -1,6 +1,7 @@
+import Offer from './offer';
 
 type MainPageProps = {
-  placeCount: number;
+  offers: Offer[];
 }
 
 export default MainPageProps;

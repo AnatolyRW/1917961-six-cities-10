@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
 import MainPageProps from './types/main-page-props';
-import PLACE_COUNT from './const';
+import Offers from '../src/mocks/offers';
+import AppProps from './types/app-props';
 
-const Setting : MainPageProps = {placeCount: PLACE_COUNT};
+const mainPageProps : MainPageProps = {offers: Offers};
+const appProps : AppProps = {mainPageProps: mainPageProps};
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -12,6 +14,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App placeCount={Setting.placeCount}/>
+    <App mainPageProps={appProps.mainPageProps}/>
   </React.StrictMode>,
 );

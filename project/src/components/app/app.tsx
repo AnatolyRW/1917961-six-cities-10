@@ -5,16 +5,16 @@ import Login from '../../pages/login/login';
 import Favorites from '../../pages/favorites/favorites';
 import NotFound from '../../pages/not-found/not-found';
 import Room from '../../pages/room/room';
-import MainPageProps from '../../types/main-page-props';
 import PrivateRoute from '../private-route/private-route';
+import AppProps from '../../types/app-props';
 
-function App({placeCount} : MainPageProps): JSX.Element {
+function App({mainPageProps}: AppProps): JSX.Element {
   return(
     <BrowserRouter>
       <Routes>
         <Route
           path = {AppRoute.Main}
-          element = {<Main placeCount={placeCount}/>}
+          element = {<Main offers={mainPageProps.offers}/>}
         />
         <Route
           path = {AppRoute.Login}
