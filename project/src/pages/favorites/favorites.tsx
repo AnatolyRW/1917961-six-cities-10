@@ -1,6 +1,7 @@
 import PlaceCard from '../../components/place-card/place-card';
+import { PlaceListProps } from '../../types/props-types/props-types';
 
-function Favorites (): JSX.Element {
+function Favorites ({offers}: PlaceListProps): JSX.Element {
   return (
     <div className="page">
       <header className="header">
@@ -47,8 +48,8 @@ function Favorites (): JSX.Element {
                 </div>
                 <div className="favorites__places">
 
-                  <PlaceCard />
-                  <PlaceCard />
+                  <PlaceCard key={`${offers[1].id}-${offers[1].title}`} offer={offers[1]} />
+                  <PlaceCard key={`${offers[2].id}-${offers[2].title}`} offer={offers[2]} />
 
                 </div>
               </li>
@@ -62,7 +63,7 @@ function Favorites (): JSX.Element {
                   </div>
                 </div>
                 <div className="favorites__places">
-                  <PlaceCard />
+                  <PlaceCard key={`${offers[1].id}-${offers[1].title}`} offer={offers[1]}/>
                 </div>
               </li>
             </ul>

@@ -1,6 +1,6 @@
-import Offer from '../types/offer';
+import Offer from '../types/data-types/offer';
 
-const offers: Offer[] = [
+const offersMocks: Offer[] = [
   {
     bedrooms: 4,
     city: {
@@ -139,5 +139,5 @@ const offers: Offer[] = [
   }
 ];
 
-export default offers;
+export default offersMocks;
 

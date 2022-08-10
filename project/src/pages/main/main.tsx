@@ -1,4 +1,4 @@
-import MainPageProps from '../../types/type-props/main-page-props';
+import { MainPageProps } from '../../types/props-types/props-types';
 import PlaceList from '../../components/place-list/place-list';
 
 function Main ({placeListProps}: MainPageProps): JSX.Element {
@@ -92,7 +92,7 @@ function Main ({placeListProps}: MainPageProps): JSX.Element {
                 </ul>
               </form>
 
-              <PlaceList offers={placeListProps.offers}/>
+              <PlaceList offers={placeListProps.offers} />
 
             </section>
             <div className="cities__right-section">
@@ -101,13 +101,6 @@ function Main ({placeListProps}: MainPageProps): JSX.Element {
           </div>
         </div>
       </main>
-
-      <footer className="footer container">
-        <a className="footer__logo-link" href="main.html">
-          <img className="footer__logo" src="img/logo.svg" alt="6 cities logo" width="64" height="33" />
-        </a>
-      </footer>
-
     </div>
   );
 }

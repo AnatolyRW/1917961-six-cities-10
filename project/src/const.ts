@@ -1,6 +1,9 @@
-const PLACE_COUNT = 10;
+export const PLACE_COUNT = 10;
 
-export default PLACE_COUNT;
+export enum Rating {
+  MaxCountStar = 5,
+  HundredPercent = 100
+}
 
 export enum AppRoute {
   Login = '/login',
