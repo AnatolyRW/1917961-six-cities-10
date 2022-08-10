@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { PlaceCardProps } from '../../types/props-types/props-types';
 import { Rating } from '../../const';
 
-function PlaceCard ({ offer, onMouseOver }: PlaceCardProps): JSX.Element {
+function PlaceCard ({ offer, placeCardImageSize, onMouseOver,}: PlaceCardProps): JSX.Element {
   const { isPremium, isFavorite, previewImage, price, rating, type, title, id } = offer;
   const ratingPercent = Rating.HundredPercent / Rating.MaxCountStar * rating;
   const formatedType = type[0].toUpperCase() + type.slice(1);
@@ -15,7 +15,7 @@ function PlaceCard ({ offer, onMouseOver }: PlaceCardProps): JSX.Element {
         </div> : ''}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={`/offer/:${id}`}>
-          <img className="place-card__image" src={previewImage} width="260" height="200" alt={type} />
+          <img className="place-card__image" src={previewImage} width={placeCardImageSize.width} height={placeCardImageSize.height} alt={type} />
         </Link>
       </div>
       <div className="place-card__info">

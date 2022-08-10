@@ -1,7 +1,18 @@
 import Offer from '../data-types/offer';
 
+export type PlaceCardImageSize = {
+  width: number,
+  height: number
+}
+
+export type FavoritesLocationItemProps = {
+  city: string,
+  offers: Offer[]
+}
+
 export type PlaceCardProps = {
   offer: Offer
+  placeCardImageSize: PlaceCardImageSize
   onMouseOver?: () => void;
 }
 

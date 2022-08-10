@@ -1,4 +1,4 @@
-import CommentForm from '../../components/comment-form/comment-form';
+import ReviewForm from '../../components/review-form/review-form';
 
 function Room(): JSX.Element {
   return (
@@ -178,7 +178,7 @@ function Room(): JSX.Element {
                   </li>
                 </ul>
 
-                <CommentForm />
+                <ReviewForm />
 
               </section>
             </div>

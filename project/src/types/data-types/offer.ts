@@ -4,19 +4,19 @@ type Location = {
     zoom: number;
   };
 
-  type City = {
+type City = {
     location: Location;
     name: string;
   };
 
-  type Host = {
+type Host = {
     avatarUrl: string;
     id: number;
     isPro: boolean;
     name: string;
   };
 
-  type Offer = {
+type Offer = {
     bedrooms: number;
     city: City;
     description: string;
