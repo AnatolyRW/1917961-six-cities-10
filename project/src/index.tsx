@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
-import MainPageProps from './types/main-page-props';
-import Offers from '../src/mocks/offers';
-import AppProps from './types/app-props';
+import MainPageProps from './types/type-props/main-page-props';
+import offers from '../src/mocks/offers';
+import AppProps from './types/type-props/app-props';
+import PlaceListProps from './types/type-props/place-list-props';
 
-const mainPageProps : MainPageProps = {offers: Offers};
-const appProps : AppProps = {mainPageProps: mainPageProps};
+const placeListProps: PlaceListProps = {offers: offers};
+const mainPageProps: MainPageProps = {placeListProps: placeListProps};
+const appProps: AppProps = {mainPageProps: mainPageProps};
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,

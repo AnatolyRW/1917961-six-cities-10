@@ -6,7 +6,7 @@ import Favorites from '../../pages/favorites/favorites';
 import NotFound from '../../pages/not-found/not-found';
 import Room from '../../pages/room/room';
 import PrivateRoute from '../private-route/private-route';
-import AppProps from '../../types/app-props';
+import AppProps from '../../types/type-props/app-props';
 
 function App({mainPageProps}: AppProps): JSX.Element {
   return(
@@ -14,7 +14,7 @@ function App({mainPageProps}: AppProps): JSX.Element {
       <Routes>
         <Route
           path = {AppRoute.Main}
-          element = {<Main offers={mainPageProps.offers}/>}
+          element = {<Main placeListProps={mainPageProps.placeListProps}/>}
         />
         <Route
           path = {AppRoute.Login}
