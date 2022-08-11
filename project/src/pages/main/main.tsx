@@ -1,7 +1,7 @@
-import PlaceCard from '../../components/place-card/place-card';
-import MainPageProps from '../../types/main-page-props';
+import { MainPageProps } from '../../types/props-types/props-types';
+import PlaceList from '../../components/place-list/place-list';
 
-function Main ({placeCount} : MainPageProps): JSX.Element {
+function Main ({placeListProps}: MainPageProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -75,7 +75,7 @@ function Main ({placeCount} : MainPageProps): JSX.Element {
           <div className="cities__places-container container">
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">{placeCount} places to stay in Amsterdam</b>
+              <b className="places__found">{placeListProps.offers.length} places to stay in Amsterdam</b>
               <form className="places__sorting" action="#" method="get">
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex={0}>
@@ -91,11 +91,9 @@ function Main ({placeCount} : MainPageProps): JSX.Element {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <div className="cities__places-list places__list tabs__content">
 
-                {Array.from({ length: placeCount }, () => <PlaceCard />)}
+              <PlaceList offers={placeListProps.offers} />
 
-              </div>
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>
@@ -103,13 +101,6 @@ function Main ({placeCount} : MainPageProps): JSX.Element {
           </div>
         </div>
       </main>
-
-      <footer className="footer container">
-        <a className="footer__logo-link" href="main.html">
-          <img className="footer__logo" src="img/logo.svg" alt="6 cities logo" width="64" height="33" />
-        </a>
-      </footer>
-
     </div>
   );
 }
