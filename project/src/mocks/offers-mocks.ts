@@ -43,7 +43,7 @@ const offersMocks: Offer[] = [
         longitude: 1000,
         zoom: 1,
       },
-      name: 'Hamburg',
+      name: 'Amsterdam',
     },
     description: 'Tempor sit labore id et. Enim laborum excepteur irure amet non qui do anim officia enim non. Sint commodo quis nisi Lorem enim Lorem nostrud exercitation tempor. Culpa ex irure ullamco Lorem voluptate nostrud magna. In exercitation et nulla consequat fugiat enim id et voluptate in sint dolore.',
     goods: ['Kitchen', 'Wifi'],

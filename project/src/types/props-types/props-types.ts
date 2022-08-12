@@ -12,7 +12,7 @@ export type FavoritesLocationItemProps = {
 
 export type PlaceCardProps = {
   offer: Offer
-  placeCardImageSize: PlaceCardImageSize
+  isFavorites: boolean,
   onMouseOver?: () => void;
 }
 
