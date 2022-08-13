@@ -1,6 +1,13 @@
-import { FavoritesLocationItemProps } from '../../types/props-types/props-types';
+import { FavoritesLocationItemProps, PlaceCardAttributes } from '../../types/props-types/props-types';
 import PlaceCard from '../place-card/place-card';
 
+export const PlaceCardFavorites: PlaceCardAttributes = {
+  card: 'favorites__card',
+  imageWrapper: 'favorites__image-wrapper',
+  cardInfo: 'favorites__card-info',
+  imgWidth: 150,
+  imgHeight: 110
+};
 
 function FavoritesLocationItem({city, offers}: FavoritesLocationItemProps): JSX.Element {
   return (
@@ -17,7 +24,7 @@ function FavoritesLocationItem({city, offers}: FavoritesLocationItemProps): JSX.
           <PlaceCard
             key={`${offer.id}-${offer.title}`.toString()}
             offer={offer}
-            isFavorites
+            placeCardAttributes={PlaceCardFavorites}
           />
         ))}
       </div>

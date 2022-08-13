@@ -1,9 +1,17 @@
 import PlaceCard from '../place-card/place-card';
-import { PlaceListProps } from '../../types/props-types/props-types';
+import { PlaceCardAttributes, OffersProps } from '../../types/props-types/props-types';
 import { useState } from 'react';
 import Offer from '../../types/data-types/offer';
 
-function PlaceList ({offers}: PlaceListProps): JSX.Element {
+export const PlaceCardFavorites: PlaceCardAttributes = {
+  card: 'cities__card',
+  imageWrapper: 'cities__image-wrapper',
+  cardInfo: '',
+  imgWidth: 260,
+  imgHeight: 200
+};
+
+function PlaceList ({offers}: OffersProps): JSX.Element {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activeOffer, setActiveOffer] = useState<Offer>();
@@ -14,7 +22,7 @@ function PlaceList ({offers}: PlaceListProps): JSX.Element {
         <PlaceCard
           key={`${offer.id}-${offer.title}`.toString()}
           offer={offer}
-          isFavorites={false}
+          placeCardAttributes={PlaceCardFavorites}
           onMouseOver={() => setActiveOffer(offer)}
         />
       ))}

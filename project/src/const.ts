@@ -1,5 +1,3 @@
-import { PlaceCardImageSize } from './types/props-types/props-types';
-
 export const PLACE_COUNT = 10;
 
 export enum Rating {
@@ -20,12 +18,3 @@ export enum AuthorizationStatus {
   Unknown = 'UNKNOWN',
 }
 
-export const PlaceCardImageSizeDefault: PlaceCardImageSize = {
-  width: 260,
-  height: 200
-};
-
-export const PlaceCardImageSizeFavorites: PlaceCardImageSize = {
-  width: 150,
-  height: 110
-};
