@@ -2,23 +2,28 @@ import { Link } from 'react-router-dom';
 import { PlaceCardProps } from '../../types/props-types/props-types';
 import { Rating } from '../../const';
 
-function PlaceCard ({ offer, placeCardImageSize, onMouseOver,}: PlaceCardProps): JSX.Element {
+function PlaceCard ({ offer, placeCardAttributes, onMouseOver}: PlaceCardProps): JSX.Element {
   const { isPremium, isFavorite, previewImage, price, rating, type, title, id } = offer;
+  const { card, imageWrapper, cardInfo, imgWidth, imgHeight } = placeCardAttributes;
   const ratingPercent = Rating.HundredPercent / Rating.MaxCountStar * rating;
   const formatedType = type[0].toUpperCase() + type.slice(1);
 
   return (
-    <article className="cities__card place-card" onMouseMove={onMouseOver}>
+    <article className={`${card} place-card`} onMouseMove={onMouseOver}>
       {isPremium ?
         <div className="place-card__mark">
           <span>Premium</span>
         </div> : ''}
-      <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to={`/offer/:${id}`}>
-          <img className="place-card__image" src={previewImage} width={placeCardImageSize.width} height={placeCardImageSize.height} alt={type} />
+      <div className={`${imageWrapper} place-card__image-wrapper`}>
+        <Link to={`/offer/${id}`}>
+          <img className="place-card__image" src={previewImage}
+            width={imgWidth}
+            height={imgHeight}
+            alt={type}
+          />
         </Link>
       </div>
-      <div className="place-card__info">
+      <div className={`place-card__info ${cardInfo}`}>
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
             <b className="place-card__price-value">&euro;{price}</b>
@@ -38,7 +43,7 @@ function PlaceCard ({ offer, placeCardImageSize, onMouseOver,}: PlaceCardProps):
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={`/offer/:${id}`}>{title}</Link>
+          <Link to={`/offer/${id}`}>{title}</Link>
         </h2>
         <p className="place-card__type">{formatedType}</p>
       </div>

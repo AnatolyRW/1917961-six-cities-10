@@ -1,5 +1,3 @@
-import { PlaceCardImageSize } from './types/props-types/props-types';
-
 export const PLACE_COUNT = 10;
 
 export enum Rating {
@@ -20,12 +18,23 @@ export enum AuthorizationStatus {
   Unknown = 'UNKNOWN',
 }
 
-export const PlaceCardImageSizeDefault: PlaceCardImageSize = {
-  width: 260,
-  height: 200
-};
+export enum MapСategory {
+  Property = 'property__map',
+  Cities = 'cities__map',
+}
 
-export const PlaceCardImageSizeFavorites: PlaceCardImageSize = {
-  width: 150,
-  height: 110
-};
+export const IconParameter = {
+  Size: {
+    x: 27,
+    y: 39
+  },
+  Anchor: {
+    x: 13.5,
+    y: 39
+  },
+  Url: {
+    Default: 'img/pin.svg',
+    Current: 'img/pin-active.svg'
+  }
+} as const;
+

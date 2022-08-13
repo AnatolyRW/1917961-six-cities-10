@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router-dom';
+import Footer from '../../components/footer/footer';
 
 function NotFound (): JSX.Element {
   return (
@@ -32,17 +33,11 @@ function NotFound (): JSX.Element {
           </div>
         </div>
       </header>
-
       <div style={{ textAlign: 'center' }}>
         <h1>Ошибка 404. Страница не существует.</h1>
         <Link to='/'>Вернуться на главную страницу</Link>
-
       </div>
-      <footer className="footer container">
-        <a className="footer__logo-link" href="main.html">
-          <img className="footer__logo" src="img/logo.svg" alt="6 cities logo" width="64" height="33" />
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }

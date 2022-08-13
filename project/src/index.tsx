@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
-import offersMocks from './mocks/offers-mocks';
+import { offersMocks } from './mocks/offers-mocks';
+import { reviewsMocks } from './mocks/reviews-mocks';
 import { AppProps } from './types/props-types/props-types';
 
 const appProps: AppProps = {
-  mainPageProps: {
-    placeListProps: {
+  mainProps: {
+    offersProps: {
       offers: offersMocks
+    },
+    reviewsProps: {
+      reviews: reviewsMocks
     }
   }
 };
@@ -18,6 +22,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App mainPageProps={appProps.mainPageProps}/>
+    <App mainProps={appProps.mainProps}/>
   </React.StrictMode>,
 );

@@ -1,17 +1,15 @@
-import { FavoritesLocationItemProps, PlaceCardImageSize } from '../../types/props-types/props-types';
+import { FavoritesLocationItemProps, PlaceCardAttributes } from '../../types/props-types/props-types';
 import PlaceCard from '../place-card/place-card';
-//import { PlaceCardImageSizeFavorites } from '../../const';
 
-const placeCardImageSizeFavorites: PlaceCardImageSize = {
-  width: 150,
-  height: 110
+export const PlaceCardFavorites: PlaceCardAttributes = {
+  card: 'favorites__card',
+  imageWrapper: 'favorites__image-wrapper',
+  cardInfo: 'favorites__card-info',
+  imgWidth: 150,
+  imgHeight: 110
 };
 
 function FavoritesLocationItem({city, offers}: FavoritesLocationItemProps): JSX.Element {
-  const offerList = offers.map((offer) => {
-    const keyValue = `${offer.id}-${offer.title}`;
-    return <PlaceCard key={keyValue.toString()} offer={offer} placeCardImageSize={placeCardImageSizeFavorites}/>;
-  });
   return (
     <li className="favorites__locations-items">
       <div className="favorites__locations locations locations--current">
@@ -22,7 +20,13 @@ function FavoritesLocationItem({city, offers}: FavoritesLocationItemProps): JSX.
         </div>
       </div>
       <div className="favorites__places">
-        {offerList}
+        {offers.map((offer) => (
+          <PlaceCard
+            key={`${offer.id}-${offer.title}`.toString()}
+            offer={offer}
+            placeCardAttributes={PlaceCardFavorites}
+          />
+        ))}
       </div>
     </li>
   );
