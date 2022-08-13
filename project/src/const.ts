@@ -18,3 +18,23 @@ export enum AuthorizationStatus {
   Unknown = 'UNKNOWN',
 }
 
+export enum MapСategory {
+  Property = 'property__map',
+  Cities = 'cities__map',
+}
+
+export const IconParameter = {
+  Size: {
+    x: 27,
+    y: 39
+  },
+  Anchor: {
+    x: 13.5,
+    y: 39
+  },
+  Url: {
+    Default: 'img/pin.svg',
+    Current: 'img/pin-active.svg'
+  }
+} as const;
+

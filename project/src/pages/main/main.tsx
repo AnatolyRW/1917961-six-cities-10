@@ -3,6 +3,9 @@ import PlaceList from '../../components/place-list/place-list';
 import Header from '../../components/header/header';
 import Tabs from '../../components/tabs/tabs';
 import PlacesSorting from '../../components/places-sorting/places-sorting';
+import { City } from '../../mocks/offers-mocks';
+import Map from '../../components/map/map';
+import { MapСategory } from '../../const';
 
 function Main ({offersProps}: MainProps): JSX.Element {
   return (
@@ -19,7 +22,9 @@ function Main ({offersProps}: MainProps): JSX.Element {
               <PlaceList offers={offersProps.offers} />
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+
+              <Map offers={offersProps.offers} city={City} className={MapСategory.Cities} />
+
             </div>
           </div>
         </div>
