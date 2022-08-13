@@ -1,10 +1,10 @@
 import Offer from '../types/data-types/offer';
 
 export const City = {
-  name: 'Amsterdam',
+  name: 'Fedorovsky',
   location: {
-    latitude: 52.37454,
-    longitude: 4.897976,
+    latitude:  61.610018,
+    longitude: 73.719760,
     zoom: 13
   }
 };
@@ -14,11 +14,11 @@ export const offersMocks: Offer[] = [
     bedrooms: 4,
     city: {
       location: {
-        latitude: 52.37454,
-        longitude: 4.897976,
+        latitude: 61.61009555,
+        longitude: 73.7139136,
         zoom: 1,
       },
-      name: 'Amsterdam',
+      name: 'Fedorovsky',
     },
     description: 'Tempor sit labore id et. Enim laborum excepteur irure amet non qui do anim officia enim non. Sint commodo quis nisi Lorem enim Lorem nostrud exercitation tempor. Culpa ex irure ullamco Lorem voluptate nostrud magna. In exercitation et nulla consequat fugiat enim id et voluptate in sint dolore.',
     goods: ['Dishwasher',
@@ -49,8 +49,8 @@ export const offersMocks: Offer[] = [
     isFavorite: true,
     isPremium: true,
     location: {
-      latitude: 52.363479,
-      longitude: 4.892781,
+      latitude: 61.610957,
+      longitude: 73.723344,
       zoom: 1,
     },
     maxAdults: 8,
@@ -64,11 +64,11 @@ export const offersMocks: Offer[] = [
     bedrooms: 1,
     city: {
       location: {
-        latitude: 53.551086,
-        longitude: 9.993682,
+        latitude: 61.61009555,
+        longitude: 73.7139136,
         zoom: 1,
       },
-      name: 'Hamburg',
+      name: 'Fedorovsky',
     },
     description: 'Tempor sit labore id et. Enim laborum excepteur irure amet non qui do anim officia enim non. Sint commodo quis nisi Lorem enim Lorem nostrud exercitation tempor. Culpa ex irure ullamco Lorem voluptate nostrud magna. In exercitation et nulla consequat fugiat enim id et voluptate in sint dolore.',
     goods: [
@@ -99,8 +99,8 @@ export const offersMocks: Offer[] = [
     isFavorite: true,
     isPremium: false,
     location: {
-      latitude: 52.369553943508,
-      longitude: 4.85309666406198,
+      latitude:  61.610093,
+      longitude: 73.719905,
       zoom: 16,
     },
     maxAdults: 8,
@@ -114,11 +114,11 @@ export const offersMocks: Offer[] = [
     bedrooms: 2,
     city: {
       location: {
-        latitude: 50.938361,
-        longitude: 6.959974,
+        latitude: 61.28428755,
+        longitude: 73.43678955,
         zoom: 1,
       },
-      name: 'Brussels',
+      name: 'Surgut',
     },
     description: 'Tempor sit labore id et. Enim laborum excepteur irure amet non qui do anim officia enim non. Sint commodo quis nisi Lorem enim Lorem nostrud exercitation tempor. Culpa ex irure ullamco Lorem voluptate nostrud magna. In exercitation et nulla consequat fugiat enim id et voluptate in sint dolore.',
     goods: ['Wifi', 'Heating', 'Kitchen', 'Cable TV'],
@@ -141,8 +141,8 @@ export const offersMocks: Offer[] = [
     isFavorite: true,
     isPremium: true,
     location: {
-      latitude: 52.3909553943508,
-      longitude: 4.85309666406198,
+      latitude:  61.262069,
+      longitude: 73.374541,
       zoom: 16,
     },
     maxAdults: 4,
@@ -156,11 +156,11 @@ export const offersMocks: Offer[] = [
     bedrooms: 1,
     city: {
       location: {
-        latitude: 50.938361,
-        longitude: 6.959974,
+        latitude: 61.28428755,
+        longitude: 73.43678955,
         zoom: 1,
       },
-      name: 'Cologne',
+      name: 'Surgut',
     },
     description: 'Tempor sit labore id et. Enim laborum excepteur irure amet non qui do anim officia enim non. Sint commodo quis nisi Lorem enim Lorem nostrud exercitation tempor. Culpa ex irure ullamco Lorem voluptate nostrud magna. In exercitation et nulla consequat fugiat enim id et voluptate in sint dolore.',
     goods: ['Dishwasher',
@@ -191,8 +191,8 @@ export const offersMocks: Offer[] = [
     isFavorite: true,
     isPremium: false,
     location: {
-      latitude: 52.389346,
-      longitude: 4.905060,
+      latitude: 61.269976,
+      longitude: 73.368673,
       zoom: 16,
     },
     maxAdults: 2,
