@@ -4,13 +4,13 @@ import { useState } from 'react';
 import Offer from '../../types/data-types/offer';
 import { PlaceCardFavorites } from '../../const';
 
-function PlaceList ({offers}: OffersProps): JSX.Element {
+function NearPlaceList ({offers}: OffersProps): JSX.Element {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activeOffer, setActiveOffer] = useState<Offer>();
 
   return (
-    <div className="cities__places-list places__list tabs__content">
+    <div className="near-places__list places__list">
       {offers.map((offer) => (
         <PlaceCard
           key={`${offer.id}-${offer.title}`.toString()}
@@ -23,4 +23,4 @@ function PlaceList ({offers}: OffersProps): JSX.Element {
   );
 }
 
-export default PlaceList;
+export default NearPlaceList;

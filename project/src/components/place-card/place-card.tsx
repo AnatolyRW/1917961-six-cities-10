@@ -1,19 +1,16 @@
 import { Link } from 'react-router-dom';
 import { PlaceCardProps } from '../../types/props-types/props-types';
-import { Rating } from '../../const';
+import PremiumMark from '../premium-mark/premium-mark';
+import RatingStars from '../rating-stars/rating-stars';
 
 function PlaceCard ({ offer, placeCardAttributes, onMouseOver}: PlaceCardProps): JSX.Element {
   const { isPremium, isFavorite, previewImage, price, rating, type, title, id } = offer;
   const { card, imageWrapper, cardInfo, imgWidth, imgHeight } = placeCardAttributes;
-  const ratingPercent = Rating.HundredPercent / Rating.MaxCountStar * rating;
   const formatedType = type[0].toUpperCase() + type.slice(1);
 
   return (
     <article className={`${card} place-card`} onMouseMove={onMouseOver}>
-      {isPremium ?
-        <div className="place-card__mark">
-          <span>Premium</span>
-        </div> : ''}
+      <PremiumMark isPremium={isPremium} className={'place-card__mark'} />
       <div className={`${imageWrapper} place-card__image-wrapper`}>
         <Link to={`/offer/${id}`}>
           <img className="place-card__image" src={previewImage}
@@ -29,7 +26,7 @@ function PlaceCard ({ offer, placeCardAttributes, onMouseOver}: PlaceCardProps):
             <b className="place-card__price-value">&euro;{price}</b>
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
-          <button className="place-card__bookmark-button place-card__bookmark-button--active button" type="button">
+          <button className={`button place-card__bookmark-button ${isFavorite ? 'place-card__bookmark-button--active' : ''}`} type="button">
             <svg className="place-card__bookmark-icon" width="18" height="19">
               <use xlinkHref="#icon-bookmark"></use>
             </svg>
@@ -38,8 +35,7 @@ function PlaceCard ({ offer, placeCardAttributes, onMouseOver}: PlaceCardProps):
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{ width: `${ratingPercent}%` }}></span>
-            <span className="visually-hidden">Rating</span>
+            <RatingStars rating={rating} />
           </div>
         </div>
         <h2 className="place-card__name">

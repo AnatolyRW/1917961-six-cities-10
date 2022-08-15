@@ -9,6 +9,15 @@ export const City = {
   }
 };
 
+export const CityAmsterdam = {
+  name: 'Amsterdam',
+  location: {
+    latitude:  52.367735,
+    longitude: 4.904139,
+    zoom: 13
+  }
+};
+
 export const offersMocks: Offer[] = [
   {
     bedrooms: 4,
@@ -46,7 +55,7 @@ export const offersMocks: Offer[] = [
       'https://10.react.pages.academy/static/hotel/19.jpg',
       'https://10.react.pages.academy/static/hotel/1.jpg',
     ],
-    isFavorite: true,
+    isFavorite: false,
     isPremium: true,
     location: {
       latitude:  61.610380,
