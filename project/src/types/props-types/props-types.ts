@@ -1,13 +1,16 @@
 import Offer from '../data-types/offer';
 import Review from '../data-types/review';
 
+export type ReviewItemProps = {
+  review: Review
+}
+
 export type PlaceCardAttributes = {
   card: string,
   imageWrapper: string,
   cardInfo: string,
   imgWidth: number,
   imgHeight: number
-
 }
 
 export type PlaceCardProps = {
@@ -31,7 +34,8 @@ export type OffersProps = {
 
 export type MainProps = {
   offersProps: OffersProps,
-  reviewsProps?: ReviewsProps
+  reviewsProps: ReviewsProps,
+  nearOffersProps?: OffersProps
 }
 
 export type AppProps = {

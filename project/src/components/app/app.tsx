@@ -14,7 +14,7 @@ function App({mainProps}: AppProps): JSX.Element {
       <Routes>
         <Route
           path = {AppRoute.Main}
-          element = {<Main offersProps={mainProps.offersProps}/>}
+          element = {<Main offersProps={mainProps.offersProps} reviewsProps={mainProps.reviewsProps}/>}
         />
         <Route
           path = {AppRoute.Login}
@@ -30,7 +30,13 @@ function App({mainProps}: AppProps): JSX.Element {
         />
         <Route
           path = {AppRoute.Room}
-          element = {<Room offersProps={mainProps.offersProps} reviewsProps={mainProps.reviewsProps}/>}
+          element = {
+            <Room
+              offersProps={mainProps.offersProps}
+              reviewsProps={mainProps.reviewsProps}
+              nearOffersProps={mainProps.nearOffersProps}
+            />
+          }
         />
         <Route
           path = '*'

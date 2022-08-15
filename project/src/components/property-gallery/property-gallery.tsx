@@ -1,4 +1,3 @@
-
 type TabProps = {
     images: string[];
   }

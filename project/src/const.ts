@@ -1,3 +1,5 @@
+import { PlaceCardAttributes } from '../src/types/props-types/props-types';
+
 export const PLACE_COUNT = 10;
 
 export enum Rating {
@@ -37,4 +39,12 @@ export const IconParameter = {
     Current: 'img/pin-active.svg'
   }
 } as const;
+
+export const PlaceCardFavorites: PlaceCardAttributes = {
+  card: 'cities__card',
+  imageWrapper: 'cities__image-wrapper',
+  cardInfo: '',
+  imgWidth: 260,
+  imgHeight: 200
+};
 

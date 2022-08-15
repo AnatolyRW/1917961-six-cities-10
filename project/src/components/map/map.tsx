@@ -4,10 +4,9 @@ import Offer, { City } from '../../types/data-types/offer';
 import 'leaflet/dist/leaflet.css';
 import { Icon, Marker } from 'leaflet';
 import { IconParameter, } from '../../const';
-//import { Icon, Marker } from 'leaflet';
 
 type MapProps = {
-    offers: Offer[],
+    offers?: Offer[],
     city: City,
     className: string
 }
@@ -26,18 +25,19 @@ function Map({offers, city, className}: MapProps): JSX.Element {
 
   useEffect(() => {
     if (map) {
-      offers.forEach((offer) => {
-        const marker = new Marker({
-          lat: offer.location.latitude,
-          lng: offer.location.longitude
+      if (offers) {
+        offers.forEach((offer) => {
+          const marker = new Marker({
+            lat: offer.location.latitude,
+            lng: offer.location.longitude
+          });
+          marker
+            .setIcon(
+              defaultIcon
+            )
+            .addTo(map);
         });
-
-        marker
-          .setIcon(
-            defaultIcon
-          )
-          .addTo(map);
-      });
+      }
     }
   }, [map, offers]);
 
