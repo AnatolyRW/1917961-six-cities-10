@@ -4,7 +4,6 @@ import PropertyGallery from '../../components/property-gallery/property-gallery'
 import ReviewForm from '../../components/review-form/review-form';
 import { MainProps } from '../../types/props-types/props-types';
 import NotFound from '../not-found/not-found';
-import { CityAmsterdam } from '../../mocks/offers-mocks';
 import { MapСategory } from '../../const';
 import Map from '../../components/map/map';
 import ReviewList from '../../components/review-list/review-list';
@@ -12,7 +11,9 @@ import NearPlaceList from '../../components/near-place-list/near-place-list';
 import PremiumMark from '../../components/premium-mark/premium-mark';
 import RatingStars from '../../components/rating-stars/rating-stars';
 
+
 function Room({offersProps, reviewsProps, nearOffersProps}: MainProps): JSX.Element {
+
   const { id } = useParams();
   if (id === undefined) {
     return <NotFound />;
@@ -23,7 +24,7 @@ function Room({offersProps, reviewsProps, nearOffersProps}: MainProps): JSX.Elem
     return <NotFound />;
   }
 
-  const {isPremium, description, isFavorite, rating, maxAdults, bedrooms, type, goods, price} = offer;
+  const {isPremium, description, isFavorite, rating, maxAdults, bedrooms, type, goods, price, city} = offer;
   return (
     <div className="page">
 
@@ -107,7 +108,7 @@ function Room({offersProps, reviewsProps, nearOffersProps}: MainProps): JSX.Elem
               </section>
             </div>
           </div>
-          <Map offers={nearOffersProps?.offers} city={CityAmsterdam} className={MapСategory.Property} />
+          <Map offers={nearOffersProps?.offers} city={city} className={MapСategory.Property} />
         </section>
         <div className="container">
           <section className="near-places places">

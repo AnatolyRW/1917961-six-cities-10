@@ -53,40 +53,40 @@ export const CitysListLocation: City[] = [
   {
     name: 'Hamburg',
     location: {
-      latitude:  9.9936819,
-      longitude: 53.5510846,
+      latitude:  53.5510846,
+      longitude: 9.9936819,
       zoom: 13
     }
   },
   {
     name: 'Dusseldorf',
     location: {
-      latitude:  6.7734556,
-      longitude: 51.2277411,
+      latitude:  51.2277411,
+      longitude: 6.7734556,
       zoom: 13
     }
   },
   {
     name: 'Paris',
     location: {
-      latitude:  2.3522219,
-      longitude: 48.856614,
+      latitude:  48.856614,
+      longitude: 2.3522219,
       zoom: 13
     }
   },
   {
     name: 'Cologne',
     location: {
-      latitude:  6.9602786,
-      longitude: 50.93753,
+      latitude:  50.93753,
+      longitude: 6.9602786,
       zoom: 13
     }
   },
   {
     name: 'Brussels',
     location: {
-      latitude:  4.3571696,
-      longitude: 50.8476424,
+      latitude:  50.8476424,
+      longitude: 4.3571696,
       zoom: 13
     }
   },

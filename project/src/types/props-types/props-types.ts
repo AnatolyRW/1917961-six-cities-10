@@ -35,7 +35,7 @@ export type OffersProps = {
 export type MainProps = {
   offersProps: OffersProps,
   reviewsProps: ReviewsProps,
-  nearOffersProps?: OffersProps
+  nearOffersProps: OffersProps
 }
 
 export type AppProps = {

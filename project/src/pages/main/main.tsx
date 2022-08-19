@@ -1,18 +1,26 @@
-import { MainProps } from '../../types/props-types/props-types';
+//import { MainProps } from '../../types/props-types/props-types';
 import PlaceList from '../../components/place-list/place-list';
 import Header from '../../components/header/header';
 import Tabs from '../../components/tabs/tabs';
 import PlacesSorting from '../../components/places-sorting/places-sorting';
 import Map from '../../components/map/map';
-import { MapСategory, CitysListLocation } from '../../const';
+import { CitysListLocation, MapСategory } from '../../const';
 import { useAppSelector } from '../../hooks';
+import {CityDefault} from '../../mocks/offers-mocks';
 
-function Main ({offersProps}: MainProps): JSX.Element {
+
+function Main (): JSX.Element {
   const { offers, selectCity } = useAppSelector((state) => state);
   const selectCityOffers = [...new Set(offers.filter((offer) => offer.city.name === selectCity))];
   const offersCount = selectCityOffers.length;
   const isEmptyOffers = !offersCount;
-  const cityLocation = CitysListLocation.find((element) => (element.name === selectCity));
+  const cityLocation = ()=> {
+    const findLocation = CitysListLocation.find((element) => (element.name === selectCity));
+    if (findLocation !== undefined) {
+      return findLocation;
+    }
+    return CityDefault;
+  };
 
   return (
     <div className="page page--gray page--main">
@@ -29,7 +37,7 @@ function Main ({offersProps}: MainProps): JSX.Element {
             </section>
             <div className="cities__right-section">
 
-              <Map offers={selectCityOffers} city={cityLocation ? cityLocation : CitysListLocation[5]} className={MapСategory.Cities} />
+              <Map offers={selectCityOffers} city={cityLocation()} className={MapСategory.Cities} />
 
             </div>
           </div>
