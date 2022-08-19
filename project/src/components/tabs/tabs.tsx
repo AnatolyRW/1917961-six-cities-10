@@ -1,6 +1,17 @@
 import React from 'react';
+import { CitysList, citys } from '../../const';
+import { useAppDispatch } from '../../hooks';
+import { MouseEvent } from 'react';
+import { selectCity } from '../../store/action';
 
-function Tabs(): JSX.Element {
+
+type tabsProps = {
+    activeCity: CitysList;
+}
+
+function Tabs({activeCity}: tabsProps): JSX.Element {
+
+  const dispatch = useAppDispatch();
 
   return (
     <React.Fragment>
@@ -8,36 +19,20 @@ function Tabs(): JSX.Element {
       <div className="tabs">
         <section className="locations container">
           <ul className="locations__list tabs__list">
-            <li className="locations__item">
-              <a className="locations__item-link tabs__item" href="/#">
-                <span>Paris</span>
-              </a>
-            </li>
-            <li className="locations__item">
-              <a className="locations__item-link tabs__item" href="/#">
-                <span>Cologne</span>
-              </a>
-            </li>
-            <li className="locations__item">
-              <a className="locations__item-link tabs__item" href="/#">
-                <span>Brussels</span>
-              </a>
-            </li>
-            <li className="locations__item">
-              <a className="locations__item-link tabs__item tabs__item--active" href="/#">
-                <span>Amsterdam</span>
-              </a>
-            </li>
-            <li className="locations__item">
-              <a className="locations__item-link tabs__item" href="/#">
-                <span>Hamburg</span>
-              </a>
-            </li>
-            <li className="locations__item">
-              <a className="locations__item-link tabs__item" href="/#">
-                <span>Dusseldorf</span>
-              </a>
-            </li>
+            {citys.map((city) => (
+              <li key={city} className="locations__item">
+                <a
+                  onClick={(evt: MouseEvent<HTMLAnchorElement>) => {
+                    evt.preventDefault();
+                    dispatch(selectCity(city));
+                  }}
+                  className={`locations__item-link tabs__item ${activeCity === city ? 'tabs__item--active' : ''}`}
+                  href="/"
+                >
+                  <span>{city}</span>
+                </a>
+              </li>)
+            )}
           </ul>
         </section>
       </div>
@@ -46,3 +41,5 @@ function Tabs(): JSX.Element {
 }
 
 export default Tabs;
+
+

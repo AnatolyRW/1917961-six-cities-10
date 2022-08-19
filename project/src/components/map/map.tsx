@@ -1,45 +1,28 @@
-import { useEffect, useRef } from 'react';
-import useMap from '../../hooks/useMap/useMap';
+import { useRef } from 'react';
+import useMap from '../../hooks/useMap';
 import Offer, { City } from '../../types/data-types/offer';
 import 'leaflet/dist/leaflet.css';
-import { Icon, Marker } from 'leaflet';
-import { IconParameter, } from '../../const';
+import { Marker } from 'leaflet';
+import useMapCenter from '../../hooks/useMapCenter';
+import useMapMarker from '../../hooks/useMapMarker';
 
 type MapProps = {
-    offers?: Offer[],
+    offers: Offer[],
     city: City,
     className: string
 }
 
-const defaultIcon = new Icon({
-  iconUrl: IconParameter.Url.Default,
-  iconSize: [IconParameter.Size.x, IconParameter.Size.y],
-  iconAnchor: [IconParameter.Anchor.x, IconParameter.Anchor.y],
-});
-
 function Map({offers, city, className}: MapProps): JSX.Element {
 
   const mapRef = useRef(null);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const prevActiveCityRef = useRef<City>(city);
+  const prevMarkersRef = useRef<Marker[]>([]);
+
   const map = useMap(mapRef, city);
 
-  useEffect(() => {
-    if (map) {
-      if (offers) {
-        offers.forEach((offer) => {
-          const marker = new Marker({
-            lat: offer.location.latitude,
-            lng: offer.location.longitude
-          });
-          marker
-            .setIcon(
-              defaultIcon
-            )
-            .addTo(map);
-        });
-      }
-    }
-  }, [map, offers]);
+  useMapCenter(prevActiveCityRef, prevMarkersRef, city, map);
+
+  useMapMarker(prevMarkersRef, offers, map);
 
   return (
     <section className={`map ${className}`} ref={mapRef}>

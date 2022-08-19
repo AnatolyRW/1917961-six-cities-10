@@ -7,14 +7,20 @@ import NotFound from '../../pages/not-found/not-found';
 import Room from '../../pages/room/room';
 import PrivateRoute from '../private-route/private-route';
 import { AppProps } from '../../types/props-types/props-types';
+import { useAppDispatch } from '../../hooks';
+import { fillOffers } from '../../store/action';
+import { offersMocks } from '../../mocks/offers-mocks';
 
 function App({mainProps}: AppProps): JSX.Element {
+  const dispatch = useAppDispatch();
+
+  dispatch(fillOffers(offersMocks));
   return(
     <BrowserRouter>
       <Routes>
         <Route
           path = {AppRoute.Main}
-          element = {<Main offersProps={mainProps.offersProps} reviewsProps={mainProps.reviewsProps}/>}
+          element = {<Main />}
         />
         <Route
           path = {AppRoute.Login}

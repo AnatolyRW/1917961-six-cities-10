@@ -1,4 +1,5 @@
 import { PlaceCardAttributes } from '../src/types/props-types/props-types';
+import { City } from './types/data-types/offer';
 
 export const PLACE_COUNT = 10;
 
@@ -48,3 +49,71 @@ export const PlaceCardFavorites: PlaceCardAttributes = {
   imgHeight: 200
 };
 
+export const CitysListLocation: City[] = [
+  {
+    name: 'Hamburg',
+    location: {
+      latitude:  53.5510846,
+      longitude: 9.9936819,
+      zoom: 13
+    }
+  },
+  {
+    name: 'Dusseldorf',
+    location: {
+      latitude:  51.2277411,
+      longitude: 6.7734556,
+      zoom: 13
+    }
+  },
+  {
+    name: 'Paris',
+    location: {
+      latitude:  48.856614,
+      longitude: 2.3522219,
+      zoom: 13
+    }
+  },
+  {
+    name: 'Cologne',
+    location: {
+      latitude:  50.93753,
+      longitude: 6.9602786,
+      zoom: 13
+    }
+  },
+  {
+    name: 'Brussels',
+    location: {
+      latitude:  50.8476424,
+      longitude: 4.3571696,
+      zoom: 13
+    }
+  },
+  {
+    name: 'Amsterdam',
+    location: {
+      latitude:  52.367735,
+      longitude: 4.904139,
+      zoom: 13
+    }
+  }
+];
+
+export enum CitysList {
+  Hamburg = 'Hamburg',
+  Dusseldorf = 'Dusseldorf',
+  Paris = 'Paris',
+  Cologne = 'Cologne',
+  Brussels = 'Brussels',
+  Amsterdam = 'Amsterdam',
+}
+
+export const citys = [
+  CitysList.Cologne,
+  CitysList.Hamburg,
+  CitysList.Dusseldorf,
+  CitysList.Brussels,
+  CitysList.Amsterdam,
+  CitysList.Paris,
+] as const;

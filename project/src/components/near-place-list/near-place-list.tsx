@@ -6,8 +6,7 @@ import { PlaceCardFavorites } from '../../const';
 
 function NearPlaceList ({offers}: OffersProps): JSX.Element {
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [activeOffer, setActiveOffer] = useState<Offer>();
+  const [, setActiveOffer] = useState<Offer>();
 
   return (
     <div className="near-places__list places__list">
