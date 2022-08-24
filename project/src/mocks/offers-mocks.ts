@@ -147,7 +147,7 @@ export const offersMocks: Offer[] = [
     },
     maxAdults: 4,
     previewImage: 'https://10.react.pages.academy/static/hotel/4.jpg',
-    price: 85,
+    price: 851,
     rating: 2.8,
     title: 'New house, perfect location',
     type: 'house',
@@ -156,11 +156,11 @@ export const offersMocks: Offer[] = [
     bedrooms: 1,
     city: {
       location: {
-        latitude:  50.93753,
-        longitude: 6.9602786,
+        latitude:  48.856614,
+        longitude: 2.3522219,
         zoom: 13
       },
-      name: 'Cologne',
+      name: 'Paris',
     },
     description: 'Tempor sit labore id et. Enim laborum excepteur irure amet non qui do anim officia enim non. Sint commodo quis nisi Lorem enim Lorem nostrud exercitation tempor. Culpa ex irure ullamco Lorem voluptate nostrud magna. In exercitation et nulla consequat fugiat enim id et voluptate in sint dolore.',
     goods: ['Dishwasher',
@@ -191,8 +191,8 @@ export const offersMocks: Offer[] = [
     isFavorite: true,
     isPremium: false,
     location: {
-      latitude:  50.93733,
-      longitude: 6.9602776,
+      latitude:  48.855514,
+      longitude: 2.3521119,
       zoom: 16,
     },
     maxAdults: 2,

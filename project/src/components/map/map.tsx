@@ -9,10 +9,11 @@ import useMapMarker from '../../hooks/useMapMarker';
 type MapProps = {
     offers: Offer[],
     city: City,
-    className: string
+    className: string,
+    activeCardId: number | null
 }
 
-function Map({offers, city, className}: MapProps): JSX.Element {
+function Map({offers, city, className, activeCardId}: MapProps): JSX.Element {
 
   const mapRef = useRef(null);
   const prevActiveCityRef = useRef<City>(city);
@@ -22,7 +23,7 @@ function Map({offers, city, className}: MapProps): JSX.Element {
 
   useMapCenter(prevActiveCityRef, prevMarkersRef, city, map);
 
-  useMapMarker(prevMarkersRef, offers, map);
+  useMapMarker(prevMarkersRef, offers, map, activeCardId);
 
   return (
     <section className={`map ${className}`} ref={mapRef}>

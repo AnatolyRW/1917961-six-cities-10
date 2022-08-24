@@ -17,6 +17,7 @@ export type PlaceCardProps = {
   offer: Offer
   placeCardAttributes: PlaceCardAttributes,
   onMouseOver?: () => void;
+  onMouseOut?: () => void
 }
 
 export type FavoritesLocationItemProps = {

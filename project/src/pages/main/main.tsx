@@ -10,7 +10,7 @@ import {CityDefault} from '../../mocks/offers-mocks';
 
 
 function Main (): JSX.Element {
-  const { offers, selectCity } = useAppSelector((state) => state);
+  const { offers, selectCity, selectOfferId } = useAppSelector((state) => state);
   const selectCityOffers = [...new Set(offers.filter((offer) => offer.city.name === selectCity))];
   const offersCount = selectCityOffers.length;
   const isEmptyOffers = !offersCount;
@@ -32,12 +32,12 @@ function Main (): JSX.Element {
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
               <b className="places__found">{selectCityOffers.length} places to stay in Amsterdam</b>
-              <PlacesSorting />
-              <PlaceList offers={selectCityOffers} />
+              <PlacesSorting offers={selectCityOffers}/>
+              <PlaceList />
             </section>
             <div className="cities__right-section">
 
-              <Map offers={selectCityOffers} city={cityLocation()} className={MapСategory.Cities} />
+              <Map offers={selectCityOffers} city={cityLocation()} className={MapСategory.Cities} activeCardId={selectOfferId}/>
 
             </div>
           </div>

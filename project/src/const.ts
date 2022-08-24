@@ -117,3 +117,10 @@ export const citys = [
   CitysList.Amsterdam,
   CitysList.Paris,
 ] as const;
+
+export enum TypeOffersSort {
+  Popular = 'Popular',
+  PriceLow = 'PriceLow',
+  PriceHigh = 'PriceHigh',
+  Top = 'Top'
+}
