@@ -1,22 +1,21 @@
 import PlaceCard from '../place-card/place-card';
-import { OffersProps } from '../../types/props-types/props-types';
-import { useState } from 'react';
-import Offer from '../../types/data-types/offer';
 import { PlaceCardFavorites } from '../../const';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { selectOffer } from '../../store/action';
 
-function PlaceList ({offers}: OffersProps): JSX.Element {
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [activeOffer, setActiveOffer] = useState<Offer>();
-
+function PlaceList (): JSX.Element {
+  const dispatch = useAppDispatch();
+  const { offers, selectCity } = useAppSelector((state) => state);
+  const selectCityOffers = [...new Set(offers.filter((offer) => offer.city.name === selectCity))];
   return (
     <div className="cities__places-list places__list tabs__content">
-      {offers.map((offer) => (
+      {selectCityOffers.map((offer) => (
         <PlaceCard
           key={`${offer.id}-${offer.title}`.toString()}
           offer={offer}
           placeCardAttributes={PlaceCardFavorites}
-          onMouseOver={() => setActiveOffer(offer)}
+          onMouseOver={() => dispatch(selectOffer(offer.id))}
+          onMouseOut={() => dispatch(selectOffer(0))}
         />
       ))}
     </div>

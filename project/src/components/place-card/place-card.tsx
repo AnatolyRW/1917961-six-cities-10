@@ -3,13 +3,13 @@ import { PlaceCardProps } from '../../types/props-types/props-types';
 import PremiumMark from '../premium-mark/premium-mark';
 import RatingStars from '../rating-stars/rating-stars';
 
-function PlaceCard ({ offer, placeCardAttributes, onMouseOver}: PlaceCardProps): JSX.Element {
+function PlaceCard ({ offer, placeCardAttributes, onMouseOver, onMouseOut}: PlaceCardProps): JSX.Element {
   const { isPremium, isFavorite, previewImage, price, rating, type, title, id } = offer;
   const { card, imageWrapper, cardInfo, imgWidth, imgHeight } = placeCardAttributes;
   const formatedType = type[0].toUpperCase() + type.slice(1);
 
   return (
-    <article className={`${card} place-card`} onMouseMove={onMouseOver}>
+    <article className={`${card} place-card`} onMouseMove={onMouseOver} onMouseOut={onMouseOut}>
       <PremiumMark isPremium={isPremium} className={'place-card__mark'} />
       <div className={`${imageWrapper} place-card__image-wrapper`}>
         <Link to={`/offer/${id}`}>

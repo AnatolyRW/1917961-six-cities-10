@@ -108,7 +108,7 @@ function Room({offersProps, reviewsProps, nearOffersProps}: MainProps): JSX.Elem
               </section>
             </div>
           </div>
-          <Map offers={nearOffersProps?.offers} city={city} className={MapСategory.Property} />
+          <Map offers={nearOffersProps?.offers} city={city} className={MapСategory.Property} activeCardId={0}/>
         </section>
         <div className="container">
           <section className="near-places places">

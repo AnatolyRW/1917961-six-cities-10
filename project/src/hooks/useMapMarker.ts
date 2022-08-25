@@ -9,10 +9,17 @@ const defaultIcon = new Icon({
   iconAnchor: [IconParameter.Anchor.x, IconParameter.Anchor.y],
 });
 
+const selectIcon = new Icon({
+  iconUrl: IconParameter.Url.Current,
+  iconSize: [IconParameter.Size.x, IconParameter.Size.y],
+  iconAnchor: [IconParameter.Anchor.x, IconParameter.Anchor.y],
+});
+
 function useMapMarker (
   prevMarkersRef: MutableRefObject<Marker[]>,
   activeCityOffers: Offer[],
-  map: Map | null
+  map: Map | null,
+  activeCardId: number | null
 ): void {
 
   useEffect(() => {
@@ -23,14 +30,12 @@ function useMapMarker (
           lng: offer.location.longitude
         });
         marker
-          .setIcon(
-            defaultIcon
-          )
+          .setIcon(offer.id === activeCardId ? selectIcon : defaultIcon)
           .addTo(map);
         prevMarkersRef.current.push(marker);
       });
     }
-  }, [prevMarkersRef, activeCityOffers, map]);
+  }, [prevMarkersRef, activeCityOffers, map, activeCardId]);
 }
 
 export default useMapMarker;
